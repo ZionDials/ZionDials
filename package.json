@@ -30,6 +30,7 @@
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sass": "^4.0.2",
     "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-plugin-sitemap": "^3.0.0",
     "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-remark-images-contentful": "^3.0.0",
     "gatsby-remark-prismjs": "^4.0.0",

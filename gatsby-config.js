@@ -7,6 +7,7 @@ module.exports = {
     title: `Zion Dials`,
     description: `Personal Website of Zion Dials.`,
     author: `@ziondials`,
+    siteUrl: `https://www.ziondials.com`,
   },
   flags: { PRESERVE_WEBPACK_CACHE: true, PARALLEL_SOURCING: true, FAST_DEV: true },
   plugins: [
@@ -75,6 +76,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
