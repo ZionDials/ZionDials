@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { Layout, SEO, Container } from '../components'
+import { Container, Layout, SEO } from '../components'
 
-const IndexPage = () => (
+const AboutPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="About" />
     <Container>
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
@@ -12,4 +12,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default AboutPage

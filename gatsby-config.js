@@ -8,6 +8,7 @@ module.exports = {
     description: `Personal Website of Zion Dials.`,
     author: `@ziondials`,
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true, PARALLEL_SOURCING: true, FAST_DEV: true },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,

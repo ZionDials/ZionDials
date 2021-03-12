@@ -9,8 +9,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
-import Footer from './footer'
+import { Footer, Header } from '.'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,11 +23,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="min-h-screen">
+    <div className="bg-white">
       <div className="relative overflow-hidden">
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
-        <Footer />
+        <Footer siteTitle={data.site.siteMetadata?.title} />
       </div>
     </div>
   )
