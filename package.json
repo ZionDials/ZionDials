@@ -48,7 +48,8 @@
     "react-helmet": "^6.1.0",
     "sass": "^1.32.8",
     "styled-components": "^5.2.1",
-    "tailwindcss": "^2.0.3"
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
