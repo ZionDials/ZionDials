@@ -5,5 +5,4 @@
  */
 
 // You can delete this file if you're not using it
-import './src/styles/theme.scss'
-import '@fontsource/nunito-sans'
+import 'styles/global.scss'

@@ -1,7 +1,17 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path = require('path')
 
-// You can delete this file if you're not using it
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === 'build-javascript') {
+    // Turn off source maps
+    actions.setWebpackConfig({
+      devtool: false,
+    })
+  }
+
+  actions.setWebpackConfig({
+    resolve: {
+      // Allows use of absolute imports
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+  })
+}
