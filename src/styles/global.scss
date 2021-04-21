@@ -1,3 +1,18 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer base {
+  h1 {
+    @apply text-2xl font-medium font-heading;
+  }
+  h2 {
+    @apply text-xl font-medium font-heading pt-4;
+  }
+  h3 {
+    @apply text-lg font-medium font-heading pt-4;
+  }
+  a {
+    @apply text-indigo-600;
+  }
+}

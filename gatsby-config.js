@@ -1,10 +1,39 @@
 const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
-console.log(`Using environment config: '${activeEnv}'`)
+// console.log(`Using environment config: '${activeEnv}'`)
 
 require('dotenv').config({
   path: `.env.${activeEnv}`,
 })
+
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || process.env.CONTENTFUL_DELIVERY_KEY,
+  downloadLocal: true,
+}
+
+// If you want to use the preview API please define
+// CONTENTFUL_HOST and CONTENTFUL_PREVIEW_ACCESS_TOKEN in your
+// environment config.
+//
+// CONTENTFUL_HOST should map to `preview.contentful.com`
+// CONTENTFUL_PREVIEW_ACCESS_TOKEN should map to your
+// Content Preview API token
+//
+// For more information around the Preview API check out the documentation at
+// https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/spaces/space/get-a-space/console/js
+//
+// To change back to the normal CDA, remove the CONTENTFUL_HOST variable from your environment.
+if (process.env.CONTENTFUL_HOST) {
+  contentfulConfig.host = process.env.CONTENTFUL_HOST
+  contentfulConfig.accessToken = process.env.CONTENTFUL_PREVIEW_KEY
+}
+
+const { spaceId, accessToken } = contentfulConfig
+
+if (!spaceId || !accessToken) {
+  throw new Error('Contentful spaceId and the access token need to be provided.')
+}
 
 module.exports = {
   siteMetadata: {
@@ -16,13 +45,18 @@ module.exports = {
   flags: {
     // https://www.gatsbyjs.com/docs/reference/release-notes/v2.28/#feature-flags-in-gatsby-configjs
     FAST_DEV: true,
-    PARALLEL_SOURCING: true,
+    PARALLEL_SOURCING: false,
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig,
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

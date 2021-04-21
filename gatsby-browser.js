@@ -1,8 +1,4 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
-
-// You can delete this file if you're not using it
 import 'styles/global.scss'
+import '@fontsource/fira-mono'
+import '@fontsource/fira-sans/500.css'
+import '@fontsource/nunito-sans'

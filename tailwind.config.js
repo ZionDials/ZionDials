@@ -2,7 +2,6 @@ const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  mode: 'jit',
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   presets: [],
   darkMode: false, // or 'media' or 'class'
@@ -237,6 +236,24 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Nunito Sans',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Noto Sans"',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      heading: [
+        'Fira Sans',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
@@ -253,7 +270,7 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+      mono: ['Fira Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -936,16 +953,5 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-    plugin(({ addBase, theme }) => {
-      addBase({
-        h1: { fontSize: theme('fontSize.2xl'), fontWeight: theme('fontWeight.medium') },
-        h2: { fontSize: theme('fontSize.xl'), fontWeight: theme('fontWeight.medium') },
-        h3: { fontSize: theme('fontSize.lg'), fontWeight: theme('fontWeight.medium') },
-      })
-    }),
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
 }
