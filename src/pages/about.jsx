@@ -3,9 +3,9 @@ import * as React from 'react'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 
-const IndexPage = () => (
+const AboutPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="About" />
     <div className="py-16 overflow-hidden bg-white">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="mx-auto text-lg max-w-prose">
@@ -70,4 +70,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default AboutPage

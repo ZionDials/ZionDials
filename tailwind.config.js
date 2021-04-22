@@ -6,6 +6,17 @@ module.exports = {
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            code: {
+              fontWeight: '700',
+            },
+          },
+        },
+      },
+    },
     screens: {
       sm: '640px',
       md: '768px',

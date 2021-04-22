@@ -12,20 +12,16 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
-          <div className="wrapper">
-            <CenteredHeader title={post.title} date={post.date} />
-            <div className="relative px-4 sm:px-6 lg:px-8">
-              <div className="mx-auto text-lg max-w-prose">
-                <div
-                  className="wrap"
-                  dangerouslySetInnerHTML={{
-                    __html: post.body.childMarkdownRemark.html,
-                  }}
-                />
-              </div>
-            </div>
+        <Helmet title={`${post.title} | ${siteTitle}`} />
+        <CenteredHeader title={post.title} date={post.date} />
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto text-lg max-w-prose">
+            <div
+              className="mx-auto mt-6 prose prose-lg text-gray-500 prose-indigo"
+              dangerouslySetInnerHTML={{
+                __html: post.body.childMarkdownRemark.html,
+              }}
+            />
           </div>
         </div>
       </Layout>
