@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import Layout from 'components/layout'
 import SEO from 'components/seo'
+import NewsletterForm from '../components/newsletterForm'
 
 const BlogPage = () => (
   <Layout>
@@ -67,6 +68,7 @@ const BlogPage = () => (
         </div>
       </div>
     </div>
+    <NewsletterForm />
   </Layout>
 )
 

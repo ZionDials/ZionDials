@@ -97,7 +97,8 @@ const navigation = {
   ],
 }
 
-function Footer() {
+function Footer(props) {
+  const { siteTitle } = props
   return (
     <FooterContainer>
       <FooterSubContainer>
@@ -116,7 +117,9 @@ function Footer() {
             </FooterSocialLinks>
           ))}
         </FooterSocialLinksContainer>
-        <FooterCopyright>Copyright &copy; {new Date().getFullYear()} Workflow, Inc. All rights reserved.</FooterCopyright>
+        <FooterCopyright>
+          Copyright &copy; {new Date().getFullYear()} {siteTitle}. All rights reserved.
+        </FooterCopyright>
       </FooterSubContainer>
     </FooterContainer>
   )

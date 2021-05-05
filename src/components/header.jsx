@@ -2,8 +2,13 @@ import * as React from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { BookmarkAltIcon, CalendarIcon, ChartBarIcon, CursorClickIcon, MenuIcon, PhoneIcon, PlayIcon, RefreshIcon, ShieldCheckIcon, SupportIcon, ViewGridIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'gatsby'
+import logo from '../images/zion_dials_black_logo.svg'
 
 const siteNavigation = [
+  {
+    text: 'Home',
+    href: '/',
+  },
   {
     text: 'About',
     href: '/about',
@@ -93,7 +98,7 @@ function Header() {
               <div className="flex justify-start lg:w-0 lg:flex-1">
                 <Link to="/">
                   <span className="sr-only">Workflow</span>
-                  <img className="w-auto h-8 sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
+                  <img className="w-auto h-8 sm:h-10" src={logo} alt="" />
                 </Link>
               </div>
               <div className="-my-2 -mr-2 md:hidden">
@@ -104,7 +109,7 @@ function Header() {
               </div>
               <Popover.Group as="nav" className="hidden space-x-10 md:flex">
                 {siteNavigation.map((links) => (
-                  <Link key={links.text} to={links.href} className="text-base font-medium text-gray-500 hover:text-gray-900">
+                  <Link key={links.text} to={links.href} className="text-base font-medium text-gray-500 hover:text-gray-900" activeClassName="text-base font-medium text-gray-900 hover:text-gray-900">
                     {links.text}
                   </Link>
                 ))}
@@ -127,7 +132,7 @@ function Header() {
                 <div className="px-5 pt-5 pb-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <img className="w-auto h-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
+                      <img className="w-auto h-8" src={logo} alt="Workflow" />
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

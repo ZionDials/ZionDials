@@ -52,7 +52,12 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-reading-time`],
+      },
+    },
     {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
@@ -75,7 +80,7 @@ module.exports = {
         background_color: `#${process.env.SITE_BACKGROUND_COLOR_HEX}`,
         theme_color: `#${process.env.SITE_THEME_COLOR_HEX}`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/ziondials-initials-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
